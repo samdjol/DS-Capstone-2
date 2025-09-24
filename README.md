@@ -1,9 +1,11 @@
 # DSCapstone2
 
 A Data-Driven Approach to Player Valuation and Scouting
+
 This project utilizes a dual-model machine learning system to analyze the football transfer market, providing deep insights for player valuation and recruitment. By combining supervised and unsupervised learning, the system moves beyond simple price prediction to offer a robust tool for identifying market inefficiencies and discovering undervalued talent.
 
 Project Overview
+
 The core of this project is a two-part analytical system:
 
 Supervised Prediction Model: A tuned XGBoost Regressor that predicts a player's market value based on a wide range of performance, biographical, and contractual data. With a final R-squared of 0.73, this model effectively replicates the complex logic of expert valuations. Its primary purpose is to challenge the market consensus and identify players whose data-driven value differs significantly from their estimated value.
@@ -13,6 +15,7 @@ Unsupervised Clustering Model: A K-Means clustering algorithm that segments play
 Together, these models create a powerful workflow for identifying "hidden gems"—players who are statistically similar to high-value archetypes but are currently undervalued by the market.
 
 Key Features
+
 Predictive Valuation: An XGBoost model that predicts player market value with 73% accuracy.
 
 Player Segmentation: K-Means clustering to identify distinct player archetypes.
@@ -24,6 +27,7 @@ Comprehensive Feature Engineering: Creation of advanced features like quality-ad
 Robust Pipeline: A full scikit-learn pipeline for reproducible preprocessing, training, and evaluation.
 
 Tech Stack
+
 Python 3
 
 Pandas: For data manipulation and analysis.
@@ -37,6 +41,7 @@ Matplotlib & Seaborn: For data visualization and analysis.
 Joblib: For model serialization (pickling).
 
 How to Use
+
 Data Preparation: Ensure your raw CSV files are in the correct directory. Run the initial data cleaning and merging notebooks to produce the final model_df.
 
 Train and Evaluate Models: Use the main analysis notebook to run the fit_evaluate_and_tune_model function. This will train, tune, and evaluate the models, printing the performance metrics.
@@ -48,6 +53,7 @@ Find Outliers: Use the error analysis script to identify players with the larges
 Make New Predictions: Load the saved player_value_model.pkl file using joblib to make predictions on new, unseen player data.
 
 Key Findings
+
 The final tuned XGBoost Regressor was the best-performing model, achieving an R-squared of 0.73 on the test set.
 
 The most important drivers of market value were found to be league/club prestige, contract status, age, and quality-adjusted performance stats.
@@ -57,6 +63,7 @@ The K-Means algorithm successfully identified 10 distinct player archetypes, pro
 The model was most effective when trained on the log-transformed target variable, which helped to normalize the skewed distribution of player values.
 
 Future Work
+
 Incorporate More Granular Data: Add advanced stats like "Expected Goals (xG)" and detailed injury history to improve accuracy.
 
 Advanced Feature Engineering: Use techniques like target encoding for high-cardinality features.
